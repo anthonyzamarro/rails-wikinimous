@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="title">
+    <h1>All of the Articles</h1>
+  </div>
+  <div class="content">
+    <p><%= link_to "Create Article", new_article_path %></p>
+
+    <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <h2><%= link_to article.title, article_path(article) %></h2>
+        <p><%= link_to "Edit Article", edit_article_path(article) %></p>
+        <p><%= link_to "Delete Article", article_path(article), method: :delete %></p>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
